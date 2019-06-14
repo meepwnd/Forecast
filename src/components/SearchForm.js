@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const SearchForm = ({ selectCity, fetch }) => {
+const SearchForm = ({ selectCity, fetch, isFetching }) => {
   const [city, setCity] = useState("");
   const onSubmit = e => {
     e.preventDefault();
@@ -19,14 +19,15 @@ const SearchForm = ({ selectCity, fetch }) => {
         onChange={e => setCity(e.target.value)}
         placeholder="The weather in..."
       />
-      <button className="btn">search</button>
+      <button className="btn" disabled={isFetching}>search</button>
     </form>
   );
 };
 
 SearchForm.propTypes = {
   selectCity: PropTypes.func,
-  fetch: PropTypes.func
+  fetch: PropTypes.func,
+  isFetching: PropTypes.bool.isRequired
 };
 
 export default SearchForm;
