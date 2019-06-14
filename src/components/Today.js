@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchTodayfNeeded } from "../actions/today";
+import { fetchTodayIfNeeded } from "../actions/today";
 import { selectCity } from "../actions/city";
 import Loader from "./Loader";
 import CitiesList from "./CitiesList";
@@ -11,7 +11,7 @@ import SearchForm from "./SearchForm";
 
 const Today = ({
   data,
-  fetchTodayfNeeded,
+  fetchTodayIfNeeded,
   selectCity,
   cities,
   selectedCity,
@@ -36,7 +36,7 @@ const Today = ({
         <p className="select-text">Please select a city</p>
       )}
 
-      <SearchForm fetch={fetchTodayfNeeded} selectCity={selectCity} />
+      <SearchForm fetch={fetchTodayIfNeeded} selectCity={selectCity} isFetching={isFetching}/>
       <CitiesList cities={cities} selectCity={selectCity} />
     </div>
   );
@@ -64,5 +64,5 @@ Today.propTypes = {
 
 export default connect(
   mapStateToProps,
-  { fetchTodayfNeeded, selectCity }
+  { fetchTodayIfNeeded, selectCity }
 )(Today);

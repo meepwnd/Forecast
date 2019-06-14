@@ -7,7 +7,7 @@ export const fetchToday = city => dispatch => {
     type: TODAY_FETCH
   });
 
-  axios
+  return axios
     .get(`${weather}${city}${key}`)
     .then(response => {
       if (response.status === 200) {
@@ -34,7 +34,7 @@ const shouldFetchToday = (state, city) => {
   return true;
 };
 
-export const fetchTodayfNeeded = city => (dispatch, getState) => {
+export const fetchTodayIfNeeded = city => (dispatch, getState) => {
   if (shouldFetchToday(getState(), city)) {
     return dispatch(fetchToday(city));
   }

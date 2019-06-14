@@ -10,7 +10,7 @@ import {
 import { combineReducers } from "redux";
 import handleError from "../api/handleErrors";
 
-const selectedCities = (state = [], action) => {
+export const selectedCities = (state = [], action) => {
   switch (action.type) {
     case SELECT_CITY:
       return [action.city, ...state.filter(city => city !== action.city)];
@@ -18,7 +18,7 @@ const selectedCities = (state = [], action) => {
       return state;
   }
 };
-const todayReducer = (
+export const todayReducer = (
   state = { isFetching: false, cities: {}, error: "" },
   action
 ) => {
@@ -47,7 +47,7 @@ const todayReducer = (
       return state;
   }
 };
-const forecastReducer = (
+export const forecastReducer = (
   state = { isFetching: false, cities: {}, error: "" },
   action
 ) => {
