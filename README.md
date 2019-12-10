@@ -1,2 +1,2 @@
-Demo: http://forecast-react-tz.herokuapp.com/
+Demo: https://forecast-react-tz.herokuapp.com/
 
