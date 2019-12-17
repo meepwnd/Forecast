@@ -3,7 +3,7 @@
 To see demo click here: https://forecast-react-tz.herokuapp.com/
 
 ## Available Scripts
-In the project directory, you can run:
+In the project directory, you can run: 
 
 ```
 npm start
