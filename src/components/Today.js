@@ -36,7 +36,11 @@ const Today = ({
         <p className="select-text">Please select a city</p>
       )}
 
-      <SearchForm fetch={fetchTodayIfNeeded} selectCity={selectCity} isFetching={isFetching}/>
+      <SearchForm
+        fetch={fetchTodayIfNeeded}
+        selectCity={selectCity}
+        isFetching={isFetching}
+      />
       <CitiesList cities={cities} selectCity={selectCity} />
     </div>
   );
@@ -62,7 +66,6 @@ Today.propTypes = {
   error: PropTypes.string
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchTodayIfNeeded, selectCity }
-)(Today);
+export default connect(mapStateToProps, { fetchTodayIfNeeded, selectCity })(
+  Today
+);

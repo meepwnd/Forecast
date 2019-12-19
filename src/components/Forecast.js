@@ -15,7 +15,7 @@ const Forecast = ({
 }) => {
   useEffect(() => {
     fetchForecastIfNeeded(selectedCity);
-  }, []);
+  }, [fetchForecastIfNeeded, selectedCity]);
   return (
     <>
       {isFetching ? (

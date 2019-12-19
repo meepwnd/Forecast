@@ -38,7 +38,6 @@ describe('fetch today data action', () => {
     const store = mockStore({ data: {} })
 
     return store.dispatch(fetchToday()).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

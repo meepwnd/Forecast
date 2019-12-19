@@ -5,7 +5,6 @@ const CitiesList = ({ cities, selectCity }) => (
   <ul className="cities-list">
     {cities
       .slice(0, 5)
-
       .map(city => (
         <li
           key={city}
